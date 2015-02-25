@@ -77,7 +77,7 @@ class db {
 		Mode db::FETCH_ASSOC:   return an associative array
 		Mode db::FETCH_OBJ:     return an array with objects
 	*/
-	public function execQuery($query, $params = array(), $mode = db::FETCH_ASSOC) {
+	public function getQuery($query, $params = array(), $mode = db::FETCH_ASSOC) {
 		$stmt = null;
 		if ($this->usesmartstmt && $this->isLastQuery($query)) {
 			$stmt = $this->laststmt;
