@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class BreweryRepository  extends BaseRepository{
 
@@ -17,18 +17,23 @@ class BreweryRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$breweryArray = array();
 
+		$i=0;
 		foreach($objects as $item){
-			$breweryArray = new Brewery($item->id, $item->name);
+			$breweryArray[$i] = new Brewery($item->id, $item->name);
+			$i++;
 		}
 
 		return $breweryArray;
 	}
 
-	public fuction getById($id){
+	public function getById($id){
 		$result =  parent::getById($id);
 
 		if(count($result) == 1){
 			$brewery = new Brewery($result[0]->id, $result[0]->name);
+		} else {
+			#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $brewery;
@@ -66,17 +71,6 @@ class BreweryRepository  extends BaseRepository{
 
 		$this->db->execQuery($query, $parameters);
 	}
-
-
-	#Still figuring out how to manage this parameter stuff.
-	public function getAllProducts($id){
-		$query = 'SELECT * FROM product WHERE product.brewery_id = : ' . $this->tableName . 'id';
-		$parameters = array(':' => $id);
-
-
-		$this->db->getQuery($query, $parameters);
-	}
-
 
 
 }

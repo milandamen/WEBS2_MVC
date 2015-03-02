@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class CountryRepository extends BaseRepository{
 
@@ -17,18 +17,23 @@ class CountryRepository extends BaseRepository{
 		$objects =  parent::getAll();
 		$countryArray = array();
 
+		$i = 0;
 		foreach($objects as $item){
-			$countryArray = new Country($item->id, $item->name);
+			$countryArray[$i] = new Country($item->id, $item->name);
+			$i++;
 		}
 
 		return $countryArray;
 	}
 
-	public fuction getById($id){
+	public function getById($id){
 		$result =  parent::getById($id);
 
 		if(count($result) == 1){
 			$country = new Country($result[0]->id, $result[0]->name);
+		} else {
+				#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $country;

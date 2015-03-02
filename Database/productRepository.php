@@ -1,6 +1,6 @@
 <?php  
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class ProductRepository extends BaseRepository{
 
@@ -17,8 +17,9 @@ class ProductRepository extends BaseRepository{
 		$objects =  parent::getAll();
 		$productArray = array();
 
+		$i = 0;
 		foreach($objects as $item){
-			$productArray = new Product($item->id, 
+			$productArray[$i] = new Product($item->id, 
 										$item->name, 
 										$item->percentage, 
 										$item->content,
@@ -29,6 +30,8 @@ class ProductRepository extends BaseRepository{
 										$item->wrapping_id,
 										$item->sort_id,
 										$item->img);
+
+			$i++;
 		}
 
 		return $productArray();
@@ -49,6 +52,9 @@ class ProductRepository extends BaseRepository{
 									$result[0]->wrapping_id,
 									$result[0]->sort_id,
 									$result[0]->img);
+		} else {
+				#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $product;

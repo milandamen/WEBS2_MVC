@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class BrandRepository  extends BaseRepository{
 
@@ -17,18 +17,23 @@ class BrandRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$brandArray = array();
 
+		$i =0;
 		foreach($objects as $item){
-			$brandArray = new Brand($item->id, $item->name);
+			$brandArray[$i] = new Brand($item->id, $item->name);
+			$i++;
 		}
 
 		return $brandArray;
 	}
 
-	public fuction getById($id){
+	public function getById($id){
 		$result =  parent::getById($id);
 
 		if(count($result) == 1){
 			$brand = new Brand($result[0]->id, $result[0]->name);
+		} else {
+			#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $brand;
@@ -74,7 +79,29 @@ class BrandRepository  extends BaseRepository{
 		$parameters = array(':' => $id);
 
 
-		$this->db->getQuery($query, $parameters);
+		$objects = $this->db->getQuery($query, $parameters);
+
+		$brandProductArray = array();
+		$i = 0;
+		foreach($objects as $item){
+			$brandProductArray[$i] = new Product($item->id, 
+										$item->name, 
+										$item->percentage, 
+										$item->content,
+										$item->description,
+										$item->price,
+										$item->brand_id, 
+										$item->brewery_id, 
+										$item->wrapping_id,
+										$item->sort_id,
+										$item->img);
+
+			$i++;
+		}
+
+		return $brandProductArray;
+
+
 	}
 
 

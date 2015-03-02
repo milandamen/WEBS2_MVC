@@ -15,7 +15,7 @@ class BaseRepository
 
 	private $queryAll = 'SELECT * FROM ';
 
-	public funtion __construct(){
+	public function __construct(){
 		require_once 'database.php';
 		$this->db = new db();
 	}

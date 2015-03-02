@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class WrappingRepository  extends BaseRepository{
 
@@ -17,18 +17,23 @@ class WrappingRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$wrappingArray = array();
 
+		$i=0;
 		foreach($objects as $item){
-			$wrappingArray = new Wrapping($item->id, $item->name);
+			$wrappingArray[$i] = new Wrapping($item->id, $item->name);
+			$i++;
 		}
 
 		return $wrappingArray;
 	}
 
-	public fuction getById($id){
+	public function getById($id){
 		$result =  parent::getById($id);
 
 		if(count($result) == 1){
 			$wrapping = new Wrapping($result[0]->id, $result[0]->name);
+		} else {
+				#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $wrapping;
@@ -66,17 +71,6 @@ class WrappingRepository  extends BaseRepository{
 
 		$this->db->execQuery($query, $parameters);
 	}
-
-
-	#Still figuring out how to manage this parameter stuff.
-	public function getAllProducts($id){
-		$query = 'SELECT * FROM product WHERE product.wrapping_id = : ' . $this->tableName . 'id';
-		$parameters = array(':' => $id);
-
-
-		$this->db->getQuery($query, $parameters);
-	}
-
 
 
 }

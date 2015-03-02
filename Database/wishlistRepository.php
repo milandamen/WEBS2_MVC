@@ -2,7 +2,7 @@
 
 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class WishRepository extends BaseRepository{
 

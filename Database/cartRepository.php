@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 /* Table information
 	1 	session_token	varchar(30)	
@@ -44,8 +44,10 @@ class CartRepository extends BaseRepository{
 		$objects =  parent::getAll();
 		$cartArray = array();
 
+		$i = 0;
 		foreach($objects as $item){
-			$cartArray = new Cart($item->session_token, $item->beer_id, $item->user_id, $item->number);
+			$cartArray[$i] = new Cart($item->session_token, $item->beer_id, $item->user_id, $item->number);
+			$i++;		
 		}
 
 		return $cartArray;

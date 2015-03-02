@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'BaseRepository.php';
+require_once 'baserepository.php';
 
 class SortRepository  extends BaseRepository{
 
@@ -17,18 +17,24 @@ class SortRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$sortArray = array();
 
+		$i = 0;
 		foreach($objects as $item){
-			$sortArray = new Sort($item->id, $item->name);
+			$sortArray[$i] = new Sort($item->id, $item->name);
+
+			$i++;
 		}
 
 		return $sortArray;
 	}
 
-	public fuction getById($id){
+	public function getById($id){
 		$result =  parent::getById($id);
 
 		if(count($result) == 1){
 			$sort = new Sort($result[0]->id, $result[0]->name);
+		} else {
+				#Throw new exception. 
+			return echo 'Database error: ID not available'.'<br/>';
 		}
 
 		return $sort;
@@ -65,16 +71,6 @@ class SortRepository  extends BaseRepository{
 		);
 
 		$this->db->execQuery($query, $parameters);
-	}
-
-
-	#Still figuring out how to manage this parameter stuff.
-	public function getAllProducts($id){
-		$query = 'SELECT * FROM product WHERE product.sort_id = : ' . $this->tableName . 'id';
-		$parameters = array(':' => $id);
-
-
-		$this->db->getQuery($query, $parameters);
 	}
 
 
