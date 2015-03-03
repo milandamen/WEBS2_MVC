@@ -21,10 +21,11 @@ if (isset($_GET['id'])) {
 	$id = $_GET['id'];
 }
 
-$controller = $controller.'Controller';
-$action .= getHttpMethod();
+$controller = ucfirst($controller);
+$controllername = $controller.'Controller';
+$actionname = $action.'_'.getHttpMethod();
 
-require_once 'Controller/'.lcfirst($controller);
-$ctrl = new $controller();
-$ctrl.$action($id);
+require_once 'Controllers/'.lcfirst($controllername).'.php';
+$ctrl = new $controllername();
+$ctrl->$actionname($id);
 ?>
