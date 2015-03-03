@@ -1,12 +1,12 @@
 <?php 
 
-require_once '../assets/Twig/lib/Twig/Autoloader.php';
+require_once 'Views/assets/Twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
-
+echo $model;
 ?>
 
 <div id="content">
 
-Lorem ipsem.
+Lorem ipsem. {{ model }}
  
 </div>
