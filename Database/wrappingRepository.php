@@ -7,7 +7,6 @@ class WrappingRepository  extends BaseRepository{
 	private $table = 'wrapping';
 
 	public function __construct(){
-
 		parent::__construct();
 		$this->tableName = $this->table;
 
@@ -17,10 +16,8 @@ class WrappingRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$wrappingArray = array();
 
-		$i=0;
 		foreach($objects as $item){
-			$wrappingArray[$i] = new Wrapping($item->id, $item->name);
-			$i++;
+			$wrappingArray[] = new Wrapping($item->id, $item->name);
 		}
 
 		return $wrappingArray;
@@ -33,7 +30,7 @@ class WrappingRepository  extends BaseRepository{
 			$wrapping = new Wrapping($result[0]->id, $result[0]->name);
 		} else {
 				#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No wrapping known for this idea');
 		}
 
 		return $wrapping;

@@ -17,10 +17,8 @@ class BrandRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$brandArray = array();
 
-		$i =0;
 		foreach($objects as $item){
-			$brandArray[$i] = new Brand($item->id, $item->name);
-			$i++;
+			$brandArray[] = new Brand($item->id, $item->name);
 		}
 
 		return $brandArray;
@@ -33,7 +31,7 @@ class BrandRepository  extends BaseRepository{
 			$brand = new Brand($result[0]->id, $result[0]->name);
 		} else {
 			#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No products known for this idea');
 		}
 
 		return $brand;
@@ -72,19 +70,16 @@ class BrandRepository  extends BaseRepository{
 		$this->db->execQuery($query, $parameters);
 	}
 
-
-	#Still figuring out how to manage this parameter stuff.
 	public function getAllProducts($id){
-		$query = 'SELECT * FROM product WHERE product.brand_id = : ' . $this->tableName . 'id';
-		$parameters = array(':' => $id);
+		$query = 'SELECT * FROM product WHERE product.brand_id = :' . $this->tableName . '.id';
+		$parameters = array(':'.$this->tableName .'.id' => $id);
 
 
 		$objects = $this->db->getQuery($query, $parameters);
 
 		$brandProductArray = array();
-		$i = 0;
 		foreach($objects as $item){
-			$brandProductArray[$i] = new Product($item->id, 
+			$brandProductArray[] = new Product($item->id, 
 										$item->name, 
 										$item->percentage, 
 										$item->content,
@@ -95,13 +90,9 @@ class BrandRepository  extends BaseRepository{
 										$item->wrapping_id,
 										$item->sort_id,
 										$item->img);
-
-			$i++;
 		}
 
 		return $brandProductArray;
-
-
 	}
 
 

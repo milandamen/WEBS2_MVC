@@ -17,7 +17,7 @@ class BaseRepository
 
 	public function __construct(){
 		require_once 'database.php';
-		$this->db = new db();
+		$this->db = new Db();
 	}
 
 	public function getAll(){

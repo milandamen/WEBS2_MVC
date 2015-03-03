@@ -17,9 +17,8 @@ class ProductRepository extends BaseRepository{
 		$objects =  parent::getAll();
 		$productArray = array();
 
-		$i = 0;
 		foreach($objects as $item){
-			$productArray[$i] = new Product($item->id, 
+			$productArray[] = new Product($item->id, 
 										$item->name, 
 										$item->percentage, 
 										$item->content,
@@ -31,7 +30,6 @@ class ProductRepository extends BaseRepository{
 										$item->sort_id,
 										$item->img);
 
-			$i++;
 		}
 
 		return $productArray();
@@ -54,7 +52,7 @@ class ProductRepository extends BaseRepository{
 									$result[0]->img);
 		} else {
 				#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No products known for this idea');
 		}
 
 		return $product;

@@ -17,11 +17,8 @@ class SortRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$sortArray = array();
 
-		$i = 0;
 		foreach($objects as $item){
-			$sortArray[$i] = new Sort($item->id, $item->name);
-
-			$i++;
+			$sortArray[] = new Sort($item->id, $item->name);
 		}
 
 		return $sortArray;
@@ -34,7 +31,7 @@ class SortRepository  extends BaseRepository{
 			$sort = new Sort($result[0]->id, $result[0]->name);
 		} else {
 				#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No sort known for this idea');
 		}
 
 		return $sort;

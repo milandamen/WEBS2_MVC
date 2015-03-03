@@ -7,20 +7,16 @@ class CountryRepository extends BaseRepository{
 	private $table = 'country';
 
 	public function __construct(){
-
 		parent::__construct();
 		$this->tableName = $this->table;
-
 	}
 
 	public function getAll(){
 		$objects =  parent::getAll();
 		$countryArray = array();
 
-		$i = 0;
 		foreach($objects as $item){
-			$countryArray[$i] = new Country($item->id, $item->name);
-			$i++;
+			$countryArray[] = new Country($item->id, $item->name);
 		}
 
 		return $countryArray;
@@ -33,7 +29,7 @@ class CountryRepository extends BaseRepository{
 			$country = new Country($result[0]->id, $result[0]->name);
 		} else {
 				#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No country known for this idea');
 		}
 
 		return $country;

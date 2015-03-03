@@ -17,10 +17,8 @@ class BreweryRepository  extends BaseRepository{
 		$objects =  parent::getAll();
 		$breweryArray = array();
 
-		$i=0;
 		foreach($objects as $item){
-			$breweryArray[$i] = new Brewery($item->id, $item->name);
-			$i++;
+			$breweryArray[] = new Brewery($item->id, $item->name);
 		}
 
 		return $breweryArray;
@@ -33,7 +31,7 @@ class BreweryRepository  extends BaseRepository{
 			$brewery = new Brewery($result[0]->id, $result[0]->name);
 		} else {
 			#Throw new exception. 
-			return echo 'Database error: ID not available'.'<br/>';
+			throw new Exception('No brewery known for this idea');
 		}
 
 		return $brewery;
