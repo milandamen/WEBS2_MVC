@@ -1,4 +1,8 @@
 <?php
+set_include_path('./Views/assets/Smarty-3.1.21/libs');
+require_once('Smarty.class.php');
+$smarty = new Smarty();
+
 /**
 	Returns 'GET' if a get request happened, else returns 'POST'.
 */
