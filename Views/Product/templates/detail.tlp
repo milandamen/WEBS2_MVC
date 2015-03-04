@@ -1,5 +1,5 @@
-<?php ?>
-<div id="content">
+{include file='Views/Shared/header.tpl'}
+
 	<h6> {* $model->name *}</h3>
 	<div class="details">
 		<img class="prod_detailimg" src="/images/{$model-> brand}/{$model->image}" />
@@ -8,39 +8,40 @@
 			<table>
 				<tr>
 					<td>Merk</td>
-					<td><?php echo $model->brand; ?></td>
+					<td>{$model->brand}</td>
 				</tr>
 				<tr>
 					<td>Soort</td>
-					<td><?php echo $model->sort; ?></td>
+					<td>{$model->sort}</td>
 				</tr>
 				<tr>
 					<td>Inhoud</td>
-					<td><?php echo $model->content; ?></td>
+					<td>{$model->content}</td>
 				</tr>
 				<tr>
 					<td>Alcohol</td>
-					<td><?php echo $model->percentage; ?></td>
+					<td>{$model->percentage}</td>
 				</tr>
 				<tr>
 					<td>Verpakking</td>
-					<td><?php echo $model->wrapping; ?></td>
+					<td>{$model->wrapping}</td>
 				</tr>
 				<tr>
 					<td>Brouwerij</td>
-					<td><?php echo $model->brewery; ?></td>
+					<td>{$model->brewery}</td>
 				</tr>
 				<tr>
 					<td>Land</td>
-					<td><?php echo $model->country; ?></td>
+					<td>{$model->country}</td>
 				</tr>
 			</table>
 		</p>
 		
 		<h4>Omschrijving</h4>
-		<p><?php echo $model->description; ?></p>    
+		<p>{$model->description}</p>    
 	</div>
 	
 	<input class="buttondetail" type="button" value="Bestellen" />
 	<input class="buttondetail" type="button" value="Verlanglijstje" />
-</div>
+
+{include file='Views/Shared/footer.tpl'}
