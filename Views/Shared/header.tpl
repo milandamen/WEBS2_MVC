@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title> {$model->title} </title>
+		<title> </title>
 		{$persoon = 'corina'}
 
 		{if $persoon == 'milan'} 
