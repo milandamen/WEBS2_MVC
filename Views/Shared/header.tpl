@@ -11,7 +11,7 @@
 		<base href="http://localhost/WEBS2_MVC/" src="http://localhost/WEBS2_MVC/">
 		{/if}
 		
-		<link rel="stylesheet" type="text/css" href="Views/css/mainstyles.css" />
+		<link rel="stylesheet" type="text/css" href="Views/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/product.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/shoppinglist.css" />
 	</head>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-04 15:06:50
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-04 15:22:58
          compiled from "Views/Shared/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:131132638054f7117a47b1d5-58902987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1ae86f8e122f70e25f2311eefeb246e23d3796ca' => 
     array (
       0 => 'Views/Shared/header.tpl',
-      1 => 1425473967,
+      1 => 1425478977,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_54f7117a490c30_70695454',
   'variables' => 
   array (
     'model' => 0,
     'persoon' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_54f7117a490c30_70695454',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54f7117a490c30_70695454')) {function content_54f7117a490c30_70695454($_smarty_tpl) {?>
 
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<base href="http://localhost/WEBS2_MVC/" src="http://localhost/WEBS2_MVC/">
 		<?php }?>
 		
-		<link rel="stylesheet" type="text/css" href="Views/css/mainstyles.css" />
+		<link rel="stylesheet" type="text/css" href="Views/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/product.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/shoppinglist.css" />
 	</head>
