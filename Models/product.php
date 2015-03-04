@@ -19,6 +19,20 @@ class Product {
 	private $sort;
 	private $wrapping;
 
+	public function __construct($id, $name, $percentage, $content, $description, $price, $brand_id, $brewery_id, $wrapping_id, $sort_id, $img){
+		$this->id = $id;
+		$this->name = $name;
+		$this->percentage = $percentage;
+		$this->content = $content;
+		$this->description= $description;
+		$this->price = $price;
+		$this->brand_id = $brand_id;
+		$this->brewery_id = $brewery_id;
+		$this->wrapping_id = $wrapping_id;
+		$this->sort_id = $sort_id;
+		$this->img = $img;
+
+	}
 
 
 	public function getId(){
@@ -50,7 +64,7 @@ class Product {
 	}
 
 	public function getBrand(){
-		return this->brand->getName();
+		return $this->brand->getName();
 	}
 
 	public function getBreweryId(){

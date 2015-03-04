@@ -3,16 +3,16 @@
 <div class="productinfo">
 		<div class="productcol"> 
 			<img src="{$imageurl}" />
-			<p>  {$model->productname}
+			<p>  {$model->getName()}
 				<p class="extrainfo"> <br/>
-				{$model->$brand}</i> <br/>
-				{$model->$brewery}
+				{$model->getBrandId()}</i> <br/>
+				{$model->getBreweryId()}
 			</p></p>
 		
 			<a href="Views/Product/detail.php?id={$productid}"> Meer info</a>
 		</div>
 			<div class="ordercol"> 
-				<price>{$price}</price>
+				<price>{$model->getPrice()}</price>
 				<p>  Bestellen? </p>
 			</div>
 	</div>
