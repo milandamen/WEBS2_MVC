@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-04 17:20:32
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-05 12:17:47
          compiled from "Views/Product/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:47740084654f7117a420346-79855371%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd5bfcbe3b069a9419951a70f06a92812e3eaa02e' => 
     array (
       0 => 'Views/Product/templates/index.tpl',
-      1 => 1425486030,
+      1 => 1425551951,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 
 			</p></p>
 		
-			<a href="product/detail<?php echo $_smarty_tpl->tpl_vars['item']->value->getId();?>
+			<a href="?controller=product&action=detail&id=<?php echo $_smarty_tpl->tpl_vars['item']->value->getId();?>
 "> Meer info</a>
 		</div>
 			<div class="ordercol"> 

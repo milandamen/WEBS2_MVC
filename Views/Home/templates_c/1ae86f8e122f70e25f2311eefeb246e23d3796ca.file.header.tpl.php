@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-04 13:59:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-05 12:18:08
          compiled from "Views/Shared/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26906398154f6f1458871b3-76762418%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1ae86f8e122f70e25f2311eefeb246e23d3796ca' => 
     array (
       0 => 'Views/Shared/header.tpl',
-      1 => 1425473967,
+      1 => 1425485639,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_54f6f1458dcd53_41927589',
   'variables' => 
   array (
-    'model' => 0,
     'persoon' => 0,
   ),
   'has_nocache_code' => false,
@@ -28,8 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <html>
 	<head>
-		<title> <?php echo $_smarty_tpl->tpl_vars['model']->value->title;?>
- </title>
+		<title> </title>
 		<?php $_smarty_tpl->tpl_vars['persoon'] = new Smarty_variable('corina', null, 0);?>
 
 		<?php if ($_smarty_tpl->tpl_vars['persoon']->value=='milan') {?> 
@@ -38,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<base href="http://localhost/WEBS2_MVC/" src="http://localhost/WEBS2_MVC/">
 		<?php }?>
 		
-		<link rel="stylesheet" type="text/css" href="Views/css/mainstyles.css" />
+		<link rel="stylesheet" type="text/css" href="Views/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/product.css" />
 		<link rel="stylesheet" type="text/css" href="Views/css/shoppinglist.css" />
 	</head>

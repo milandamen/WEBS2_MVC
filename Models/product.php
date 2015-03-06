@@ -31,7 +31,6 @@ class Product {
 		$this->wrapping_id = $wrapping_id;
 		$this->sort_id = $sort_id;
 		$this->img = $img;
-
 	}
 
 

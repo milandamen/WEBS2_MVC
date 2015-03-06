@@ -1,7 +1,7 @@
 <?php
 require_once 'base_lib.php';
 
-$controller = 'product';
+$controller = 'home';
 $action = 'index';
 $id = 0;
 

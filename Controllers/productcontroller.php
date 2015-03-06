@@ -18,7 +18,7 @@ class ProductController extends BaseController {
 		$this->renderView($object);
 	}
 
-	public function detail($id) {
+	public function detail_GET($id) {
 
 		$product = new Product(1, 'Testeee', '10d', '1L', 'Description', 'Price', '1', '1', '1', '1', 'test.jpg');
 

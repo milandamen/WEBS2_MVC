@@ -2,15 +2,15 @@
 
 <nav>   
 	<ul id="menu">
-		<li class="top"><a href="index.php">Home</a></li>
-			<li class="top"><a href="pages/blog/blog.php">Blog</a></li>
+		<li class="top"><a href="">Home</a></li>
+			<li class="top"><a href="?controller=blog">Blog</a></li>
 		<li class="top">
-			<a href="pages/products/">Producten</a>
+			<a href="?controller=product">Producten</a>
 		</li> 
-		<li class="top"><a href="pages/search.php">Zoek</a></li> 
-		<li class="top"><a href="pages/about/index.php">Over ons</a>
+		<li class="top"><a href="?controller=zoek">Zoek</a></li> 
+		<li class="top"><a href="?controller=about">Over ons</a>
 			<ul class="submenu">
-				<li class="top"><a href="pages/about/contact.php"> Contact </a> </li>
+				<li class="top"><a href="controller=about&action=contact"> Contact </a> </li>
 			</ul>
 		</li>
 

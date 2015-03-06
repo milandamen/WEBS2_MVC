@@ -32,7 +32,7 @@
 				</tr>
 				<tr>
 					<td>Land</td>
-					<td>{$model->getCountryId()}</td>
+					<td>{*$model->getCountryId()*}</td>
 				</tr>
 			</table>
 		</p>

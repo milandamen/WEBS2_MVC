@@ -11,7 +11,7 @@
 				{$item->getBreweryId()}
 			</p></p>
 		
-			<a href="product/detail{$item->getId()}"> Meer info</a>
+			<a href="?controller=product&action=detail&id={$item->getId()}"> Meer info</a>
 		</div>
 			<div class="ordercol"> 
 				<price>{$item->getPrice()}</price>
