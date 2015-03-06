@@ -1,6 +1,6 @@
 <?php
 class BaseController {
-	protected function renderView($model = null) {
+	protected function renderView($model = null, $title = 'Home', $sidebar = null) {
 		global $controller;
 		global $action;
 		
@@ -11,8 +11,12 @@ class BaseController {
 		$smarty->setCacheDir('Views/'.$controller.'/cache/');
 
 		$smarty->assign('model', $model);
-
+		$smarty->assign('title', $title);
+		$smarty->assign('sidebar', $sidebar);
+		
+		$smarty->display('Views/Shared/header.tpl');
 		$smarty->display($action.'.tpl');
+		$smarty->display('Views/Shared/footer.tpl');
 	}
 }
 ?>
