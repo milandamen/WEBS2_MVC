@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-04 12:10:53
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-06 14:10:43
          compiled from "Views\Home\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2978954f6e64d152f32-34422656%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '51e906ac10b9a8df3d4a078f3f9beee175e0187a' => 
     array (
       0 => 'Views\\Home\\templates\\index.tpl',
-      1 => 1425467452,
+      1 => 1425647440,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'model' => 0,
+    'title' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54f6e64d1c1fb7_63635550')) {function content_54f6e64d1c1fb7_63635550($_smarty_tpl) {?>
-
 Hello <?php echo $_smarty_tpl->tpl_vars['model']->value;?>
 , welcome to Smarty!
-<b>asdasd</b><?php }} ?>
+<b>asdasd</b>
+
+Titel: <?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+
+
+<?php }} ?>

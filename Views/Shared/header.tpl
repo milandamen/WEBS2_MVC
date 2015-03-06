@@ -2,8 +2,8 @@
 
 <html>
 	<head>
-		<title> </title>
-		{$persoon = 'corina'}
+		<title>{$title}</title>
+		{$persoon = 'milan'}
 
 		{if $persoon == 'milan'} 
 		<base href="http://localhost/webs2/mvc/" src="http://localhost/webs2/mvc/">
