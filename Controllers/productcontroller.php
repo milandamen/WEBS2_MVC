@@ -22,8 +22,7 @@ class ProductController extends BaseController {
 
 		$product = new Product(1, 'Testeee', '10d', '1L', 'Description', 'Price', '1', '1', '1', '1', 'test.jpg');
 
-		$object = (object) $product;
-		$this->renderView($object);
+		$this->renderView($product);
 	}
 }
 ?>
