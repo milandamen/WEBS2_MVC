@@ -1,46 +1,47 @@
-<?php ?>
-<div id="content">
-	<h6><?php echo $model->name ?></h3>
+{include file='Views/Shared/header.tpl'}
+
+	<h6> {* $model->name *}</h3>
 	<div class="details">
-		<img class="prod_detailimg" src="/images/<?php echo $model-> brand . '/'. $model->image; ?>" />
+		<img class="prod_detailimg" src="/images/{$model->getBrandId()}/{$model->image}" />
 		<h4>Specificaties</h4>
 		<p> 
 			<table>
 				<tr>
 					<td>Merk</td>
-					<td><?php echo $model->brand; ?></td>
+					<td>{$model->getBrandId()}</td>
 				</tr>
 				<tr>
 					<td>Soort</td>
-					<td><?php echo $model->sort; ?></td>
+					<td>{$model->getSortId()}</td>
 				</tr>
 				<tr>
 					<td>Inhoud</td>
-					<td><?php echo $model->content; ?></td>
+					<td>{$model->getContent()}</td>
 				</tr>
 				<tr>
 					<td>Alcohol</td>
-					<td><?php echo $model->percentage; ?></td>
+					<td>{$model->getPercentage()}</td>
 				</tr>
 				<tr>
 					<td>Verpakking</td>
-					<td><?php echo $model->wrapping; ?></td>
+					<td>{$model->getWrappingId()}</td>
 				</tr>
 				<tr>
 					<td>Brouwerij</td>
-					<td><?php echo $model->brewery; ?></td>
+					<td>{$model->getBreweryId()}</td>
 				</tr>
 				<tr>
 					<td>Land</td>
-					<td><?php echo $model->country; ?></td>
+					<td>{*$model->getCountryId()*}</td>
 				</tr>
 			</table>
 		</p>
 		
 		<h4>Omschrijving</h4>
-		<p><?php echo $model->description; ?></p>    
+		<p>{$model->getDescription()}</p>    
 	</div>
 	
 	<input class="buttondetail" type="button" value="Bestellen" />
 	<input class="buttondetail" type="button" value="Verlanglijstje" />
-</div>
+
+{include file='Views/Shared/footer.tpl'}
